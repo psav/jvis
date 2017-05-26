@@ -9,6 +9,6 @@ urlpatterns = [
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^jvis/', views.gui),
-    url(r'^detail/', views.detail)
+    url(r'^jvis/', views.gui, name='jvis'),
+    url(r'^detail/', views.detail, name='detail')
 ]
