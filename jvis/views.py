@@ -35,7 +35,7 @@ def detail(request):
     source_data = request.POST.get('source_data', None)
     source_type = request.POST.get('source_type', 'JSON')
     if source_type == 'YAML':
-        ss = yaml.load(source_data)
+        ss = yaml.safe_load(source_data)
     else:
         ss = json.loads(source_data)
     return render(request, 'detail.html',
