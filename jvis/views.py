@@ -1,4 +1,5 @@
 import json
+import yaml
 
 from .forms import GuiForm
 from django.shortcuts import render
@@ -32,6 +33,10 @@ def gui(request):
 def detail(request):
     """View for test details"""
     source_data = request.POST.get('source_data', None)
-    ss = json.loads(source_data)
+    source_type = request.POST.get('source_type', 'JSON')
+    if source_type == 'YAML':
+        ss = yaml.load(source_data)
+    else:
+        ss = json.loads(source_data)
     return render(request, 'detail.html',
                   {'data': render_obj(ss)})
