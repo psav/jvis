@@ -7,7 +7,8 @@ from django.shortcuts import render
 
 def render_obj(obj):
     from collections import Mapping, Iterable
-    if isinstance(obj, basestring):
+    import types
+    if isinstance(obj, types.StringTypes):
         return obj
     elif isinstance(obj, Mapping):
         string = "<table style='border-color:#ccc;border-width:1px;border-style:solid'>"
@@ -22,6 +23,8 @@ def render_obj(obj):
             string += "<tr><td style='border-color:#ccc;border-width:1px;border-style:solid'>{}</td></tr>".format(render_obj(value))
         string += "</table>"
         return string
+    else:
+        return str(obj)
 
 
 def gui(request):
