@@ -7,7 +7,7 @@ urlpatterns = [
     # Examples:
     # url(r'^$', 'jvis.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
-
+    url(r'^$', views.gui, name='jvis'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^jvis/', views.gui, name='jvis'),
     url(r'^detail/', views.detail, name='detail')

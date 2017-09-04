@@ -32,7 +32,6 @@ ALLOWED_HOSTS = [os.environ.get('OPENSHIFT_APP_DNS', '127.0.0.1'), socket.gethos
 # Application definition
 
 INSTALLED_APPS = (
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
