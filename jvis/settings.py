@@ -26,7 +26,7 @@ SECRET_KEY = 'TEST'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [os.environ['OPENSHIFT_APP_DNS'], socket.gethostname()]
+ALLOWED_HOSTS = [a for a in [os.environ.get('OPENSHIFT_APP_DNS'), socket.gethostname()] if a]
 
 
 # Application definition
