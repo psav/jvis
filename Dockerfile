@@ -5,5 +5,4 @@ RUN pip install Django PyYAML
 RUN git clone https://github.com/psav/jvis
 ADD setup.sh /setup.sh
 EXPOSE 8000
-USER fedora
 ENTRYPOINT ["sh", "setup.sh"]
